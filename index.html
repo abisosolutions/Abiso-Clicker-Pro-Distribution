@@ -6,7 +6,7 @@
 <title>Abiso Clicker Pro — Official Download</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --teal:   #00E5CC;
@@ -47,24 +47,22 @@ body::before {
 .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
 section { padding: 64px 0; }
 
-/* ── TYPOGRAPHY — THE FIX ──
-   Syne is a wide display font. Letter-spacing on headings makes it look
-   stretched. Zero letter-spacing on h1/h2. Reserve spacing for small labels only. */
+/* ── TYPOGRAPHY — display headings use Plus Jakarta Sans 800 for mobile readability ── */
 h1 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(1.85rem, 6vw, 2.9rem);
   font-weight: 800;
   color: var(--text);
-  letter-spacing: 0;
+  letter-spacing: -0.02em;
   line-height: 1.15;
   margin-bottom: 14px;
 }
 h1 .accent { color: var(--teal); }
 h2.section-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(1.35rem, 3.5vw, 1.9rem);
   font-weight: 800;
-  letter-spacing: 0;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   margin-bottom: 10px;
 }
@@ -122,9 +120,9 @@ nav {
   font-size: 16px;
 }
 .nav-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 13px; font-weight: 800; color: var(--text);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.02em;
 }
 .nav-links { display: flex; gap: 24px; }
 .nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.2s; }
@@ -140,12 +138,52 @@ nav {
   margin: 0 auto 24px; font-size: 44px;
 }
 .hero-sub { font-size: 16px; color: var(--muted); max-width: 500px; margin: 0 auto 40px; line-height: 1.75; }
+
+.trial-banner {
+  max-width: 560px;
+  margin: -24px auto 28px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, rgba(124,77,255,0.12), rgba(0,229,204,0.08));
+  border: 1px solid rgba(124,77,255,0.28);
+  border-radius: 14px;
+  text-align: left;
+}
+.trial-banner strong {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+.trial-banner p { font-size: 14px; color: var(--muted); line-height: 1.7; margin: 0; }
+
 .hero-stats { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; margin-bottom: 48px; }
-.stat-val { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: 0; }
+.stat-val { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; }
 .stat-val.teal   { color: var(--teal); }
 .stat-val.gold   { color: var(--gold); }
 .stat-val.purple { color: var(--purple); }
 .stat-label { font-size: 10px; color: var(--dim); letter-spacing: 0.4px; text-transform: uppercase; margin-top: 2px; }
+
+.activation-callout {
+  max-width: 680px;
+  margin: 0 auto 24px;
+  padding: 18px 22px;
+  background: var(--card);
+  border: 1px solid rgba(0,229,204,0.22);
+  border-radius: 14px;
+  text-align: left;
+}
+.activation-callout h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--teal);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.activation-callout p { font-size: 13.5px; color: var(--muted); line-height: 1.75; margin: 0; }
 
 /* ── DOWNLOAD — mobile-first, stacked then side-by-side ── */
 .dl-grid { display: flex; flex-direction: column; gap: 14px; max-width: 680px; margin: 0 auto; }
@@ -275,7 +313,7 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; background: 
 /* ── FOOTER ── */
 footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: center; }
 .footer-logo { display: flex; align-items: center; justify-content: center; gap: 9px; margin-bottom: 12px; }
-.footer-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.5px; }
+.footer-name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.02em; }
 .footer-tagline { font-size: 13px; color: var(--dim); margin-bottom: 20px; }
 .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 18px; }
 .footer-links a { font-size: 12px; color: var(--dim); text-decoration: none; transition: color 0.2s; }
@@ -289,6 +327,7 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
   section { padding: 52px 0; }
   .trust-hero { flex-direction: column; }
   .hero-stats { gap: 18px; }
+  .trial-banner { margin-top: -12px; }
 }
 
 /* ── ANIMATION ── */
@@ -298,13 +337,14 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
 .hero .hero-icon  { animation-delay: 0.08s; }
 .hero h1          { animation-delay: 0.13s; }
 .hero .hero-sub   { animation-delay: 0.18s; }
+.hero .trial-banner { animation-delay: 0.20s; }
 .hero .hero-stats { animation-delay: 0.23s; }
+.hero .activation-callout { animation-delay: 0.25s; }
 .hero .dl-grid    { animation-delay: 0.28s; }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-brand">
@@ -320,18 +360,25 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="wrap">
     <div class="pill-label">v 1.0 · Stable Release</div>
     <div class="hero-icon">🎯</div>
     <h1>Abiso <span class="accent">Clicker</span> Pro</h1>
     <p class="hero-sub">Professional wireless presentation control. Turn your Android phone into a powerful PowerPoint remote — over local WiFi, no hardware needed.</p>
+    <div class="trial-banner">
+      <strong>Try before you buy</strong>
+      <p>Every account gets <strong style="color:var(--text)">7 free sessions</strong> — enough to test your WiFi link, slide preview, and laser pointer on real decks before you spend anything.</p>
+    </div>
     <div class="hero-stats">
       <div class="stat"><div class="stat-val teal">WiFi</div><div class="stat-label">Connection</div></div>
-      <div class="stat"><div class="stat-val gold">₱699</div><div class="stat-label">Lifetime License</div></div>
+      <div class="stat"><div class="stat-val gold">One-time</div><div class="stat-label">Purchase</div></div>
       <div class="stat"><div class="stat-val purple">Zero</div><div class="stat-label">Subscriptions</div></div>
       <div class="stat"><div class="stat-val teal">6</div><div class="stat-label">Pro Features</div></div>
+    </div>
+    <div class="activation-callout">
+      <h3>Activate Pro in the app only</h3>
+      <p>Payments for the lifetime license (<strong style="color:var(--text)">₱699</strong> in the Philippines / <strong style="color:var(--text)">$14.99</strong> internationally) are handled <strong style="color:var(--text)">only inside the Android app</strong> — not on this website. Open the app, tap the <strong style="color:var(--text)">Pro</strong> icon, and complete checkout with <strong style="color:var(--text)">PayMongo</strong> or <strong style="color:var(--text)">PayPal</strong> to unlock lifetime access.</p>
     </div>
     <div class="dl-grid">
       <div class="dl-card windows">
@@ -352,7 +399,6 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
   </div>
 </section>
 
-<!-- FEATURES -->
 <section id="features">
   <div class="wrap">
     <div class="section-tag">What You Get</div>
@@ -369,7 +415,6 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
   </div>
 </section>
 
-<!-- TRUST -->
 <section id="trust">
   <div class="wrap">
     <div class="section-tag">Security &amp; Trust</div>
@@ -405,13 +450,13 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
       </div>
       <div class="trust-card">
         <h4>✦ WHY WINDOWS SHOWS A WARNING</h4>
-        <p>Microsoft SmartScreen blocks EXE files that do not have an Extended Validation (EV) code-signing certificate. These cost ₱25,000+ per year. We are a small independent team and have not purchased one yet.</p>
-        <br><p>The warning does <strong style="color:var(--text)">not</strong> mean the file is dangerous. It means it is new and unsigned. Scan it on VirusTotal to confirm it is clean, then proceed past the warning.</p>
+        <p>Microsoft SmartScreen often warns the first time you run software that is <strong style="color:var(--text)">new and not yet code-signed</strong>. That does <strong style="color:var(--text)">not</strong> mean the file is malicious — it means Windows has not yet built reputation for this build.</p>
+        <br><p>Upload the EXE to <a href="https://www.virustotal.com/gui/home/upload" target="_blank" rel="noopener" style="color:var(--teal)">VirusTotal</a> and confirm a clean scan, then use <strong style="color:var(--text)">More info</strong> → <strong style="color:var(--text)">Run anyway</strong> when SmartScreen appears.</p>
       </div>
       <div class="trust-card">
         <h4>✦ WHY ANDROID BLOCKS THE APK</h4>
         <p>Android blocks APK files from outside the Play Store by default. This happens to all sideloaded apps — including major apps like Telegram which also distribute APKs directly.</p>
-        <br><p>We are not on the Play Store yet because the $25 developer fee is outside our current budget. Your purchase directly helps fund this. We plan to publish as soon as we have the funds.</p>
+        <br><p>Our Google Play listing is <strong style="color:var(--text)">currently under process</strong>. Until it goes live, the official APK is distributed from our GitHub releases page.</p>
       </div>
     </div>
     <div class="trust-card">
@@ -419,12 +464,11 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
       <p style="margin-bottom:12px;">Compare the file's SHA256 hash to the one published above the download buttons. Run these commands to generate the hash:</p>
       <div class="dl-hash"><span class="hash-label">PowerShell</span><span>Get-FileHash "Abiso_Clicker_Pro_Host_Setup.exe" -Algorithm SHA256 | Select-Object Hash</span></div>
       <div class="dl-hash" style="margin-top:8px;"><span class="hash-label">Terminal</span><span>shasum -a 256 ~/Downloads/Abiso_Clicker_Pro_v1.apk</span></div>
-      <p style="margin-top:12px; color:var(--muted); font-size:13px;">If the output matches exactly, the file is identical to what we released. If it differs by even one character, do not install it.</p>
+      <p style="margin-top:12px; color:var(--muted); font-size:13px;">If the output matches exactly, file is identical to what we released. If it differs by even one character, do not install it.</p>
     </div>
   </div>
 </section>
 
-<!-- INSTALL -->
 <section id="install">
   <div class="wrap">
     <div class="section-tag">Installation Guide</div>
@@ -455,31 +499,29 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
   </div>
 </section>
 
-<!-- FAQ -->
 <section id="faq">
   <div class="wrap">
     <div class="section-tag">FAQ</div>
     <h2 class="section-title">Common Questions</h2>
     <p class="section-sub" style="margin-bottom:32px;">Answers to the most common concerns before downloading.</p>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is this a virus? My antivirus flagged it.<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">No. Both files are clean. Antivirus programs sometimes flag unsigned software with a "false positive" — they don't recognize the new file, not that they found malicious code. Upload the file to <a href="https://www.virustotal.com" target="_blank" style="color:var(--teal)">VirusTotal.com</a> to check it against 70+ engines. A clean result there is far more reliable than a single antivirus flagging a new file.</div></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Why isn't the app on the Google Play Store?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Publishing on Google Play requires a one-time $25 USD developer fee. As a small independent team in Davao City, Philippines, we are working toward this. Your purchase directly helps fund it. In the meantime, the APK is distributed from our official GitHub releases page.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Why isn't the app on the Google Play Store?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Our Play Store listing is <strong style="color:var(--text)">currently under process</strong>. As a small independent team in the Philippines, we will publish there as soon as the listing is approved. In the meantime, the APK is distributed from our official GitHub releases page.</div></div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does the app access my PowerPoint files or send them to the internet?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">No. Your files never leave your local network. The Windows Host reads your open PowerPoint file, converts slides to images, and sends them directly to your phone over local WiFi — never to any cloud server. The only internet traffic is the license check with Firebase when you sign in.</div></div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">My phone and laptop can't connect. What do I do?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Both devices must be on the same WiFi network. If your office or school WiFi blocks device-to-device connections, enable <strong>Mobile Hotspot</strong> on your Windows laptop and connect your phone's WiFi to it. This creates a private direct link that bypasses network restrictions entirely.</div></div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What happens to my Pro license if I lose my phone?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Your license is tied to your Google account, not your device. Get a new phone, download the APK, sign in with the same Google account, and your Pro status is restored automatically — no support ticket, no extra payment.</div></div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does it work without internet during my presentation?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes. Once signed in at least once with internet, your Pro license is cached to your phone's local storage. After that, no internet is needed to confirm your license. The presentation control runs entirely over local WiFi between phone and laptop.</div></div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What are the system requirements?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner"><strong style="color:var(--text)">Windows Host:</strong> Windows 10 or later, Microsoft PowerPoint (any recent version), .NET 8 Runtime (installer will prompt if absent). 4 GB RAM recommended.<br><br><strong style="color:var(--text)">Android App:</strong> Android 8.0 (Oreo) or later. Any Android phone made after 2018 will work fine.</div></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Who made this? Can I trust a small team?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Abiso Clicker Pro is built by a small independent software team in Davao City, Philippines. We earn trust through transparency — published file hashes, clear explanation of what the app does, and encouraging you to scan the files yourself. We read every support email personally. Reach us at <a href="mailto:abisosolutions@gmail.com" style="color:var(--teal)">abisosolutions@gmail.com</a>.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Who made this? Can I trust a small team?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Abiso Clicker Pro is built by a small independent software team in the Philippines. We earn trust through transparency — published file hashes, clear explanation of what the app does, and encouraging you to scan the files yourself. We read every support email personally. Reach us at <a href="mailto:abisosolutions@gmail.com" style="color:var(--teal)">abisosolutions@gmail.com</a>.</div></div></div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="footer-logo">
       <div class="nav-logo">🎯</div>
       <span class="footer-name">ABISO CLICKER PRO</span>
     </div>
-    <p class="footer-tagline">Professional Wireless Presentation Control · Davao City, Philippines</p>
+    <p class="footer-tagline">Professional Wireless Presentation Control · Philippines</p>
     <div class="footer-links">
       <a href="mailto:abisosolutions@gmail.com">abisosolutions@gmail.com</a>
       <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution" target="_blank">GitHub Releases</a>
