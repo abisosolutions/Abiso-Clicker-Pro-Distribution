@@ -6,7 +6,7 @@
 <title>Abiso Clicker Pro — Official Download</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --teal:   #00E5CC;
@@ -47,7 +47,7 @@ body::before {
 .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
 section { padding: 64px 0; }
 
-/* ── TYPOGRAPHY — READABILITY FIX ── */
+/* ── TYPOGRAPHY ── */
 h1 {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(2rem, 6vw, 3.2rem);
@@ -66,7 +66,7 @@ h2.section-title {
   line-height: 1.2;
   margin-bottom: 10px;
 }
-h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; letter-spacing: 0; }
+h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
 
 .pill-label {
   display: inline-flex;
@@ -178,13 +178,34 @@ nav {
 .windows .dl-btn { background: var(--teal); color: #080B12; }
 .android .dl-btn { background: var(--purple); color: #fff; }
 
-.dl-hash {
-  margin-top: 10px; padding: 8px 10px;
-  background: #05080D; border-radius: 8px;
-  font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--dim);
-  word-break: break-all; display: flex; align-items: flex-start; gap: 6px;
+/* ── PRICING SECTION ── */
+#pricing { border-top: 1px solid var(--stroke); }
+.price-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 800px; margin: 40px auto 0; }
+@media (min-width: 640px) { .price-grid { grid-template-columns: 1fr 1fr; } }
+
+.price-card {
+  background: linear-gradient(180deg, var(--card2) 0%, var(--dark) 100%);
+  border: 1px solid var(--stroke);
+  border-radius: 24px; padding: 40px 30px;
+  text-align: center;
+  transition: border-color 0.3s;
 }
-.hash-label { color: var(--teal); flex-shrink: 0; }
+.price-card.featured { border-color: var(--gold); box-shadow: 0 15px 40px rgba(255, 214, 0, 0.05); }
+.price-tag { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 3rem; font-weight: 800; color: var(--gold); line-height: 1; }
+.price-period { font-size: 12px; color: var(--muted); margin-bottom: 24px; display: block; letter-spacing: 1px; text-transform: uppercase; }
+
+.payment-methods { display: flex; justify-content: center; gap: 15px; align-items: center; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--stroke); }
+.method-icon { font-size: 10px; font-weight: 700; color: var(--dim); display: flex; flex-direction: column; align-items: center; gap: 4px; }
+
+.instruction-box {
+  margin-top: 30px;
+  padding: 15px;
+  background: rgba(0, 229, 204, 0.05);
+  border: 1px dashed var(--teal);
+  border-radius: 12px;
+  font-size: 13px;
+  color: var(--text);
+}
 
 /* ── FEATURES ── */
 #features { border-top: 1px solid var(--stroke); }
@@ -215,45 +236,6 @@ nav {
   border-radius: 10px; color: var(--teal); font-size: 13px; font-weight: 700;
   text-decoration: none; transition: background 0.2s;
 }
-.vt-btn:hover { background: rgba(0,229,204,0.14); }
-
-.trust-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 14px; }
-@media (min-width: 580px) { .trust-grid { grid-template-columns: 1fr 1fr; } }
-
-.trust-card { background: var(--card); border: 1px solid var(--stroke); border-radius: 16px; padding: 22px; }
-.trust-card h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; color: var(--gold); margin-bottom: 10px; }
-.trust-card p, .trust-card li { font-size: 13px; color: var(--muted); line-height: 1.75; }
-.trust-card ul { padding-left: 18px; }
-.trust-card li { margin-bottom: 4px; }
-
-.perm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
-.perm-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--muted); }
-.perm-check { width: 18px; height: 18px; border-radius: 5px; background: rgba(0,230,118,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: var(--green); }
-.perm-x     { width: 18px; height: 18px; border-radius: 5px; background: rgba(239,68,68,0.1);  display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: #EF4444; }
-
-/* ── INSTALL ── */
-#install { border-top: 1px solid var(--stroke); }
-.tab-row { display: flex; gap: 8px; margin-bottom: 28px; }
-.tab-btn {
-  flex: 1; padding: 12px 16px; border-radius: 10px; border: 1px solid var(--stroke);
-  background: transparent; color: var(--muted);
-  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 600;
-  cursor: pointer; transition: all 0.2s;
-}
-.tab-btn.active           { background: var(--teal); color: #080B12; border-color: var(--teal); }
-.tab-btn:hover:not(.active) { border-color: var(--teal); color: var(--teal); }
-.tab-panel { display: none; }
-.tab-panel.active { display: block; }
-
-.step { display: flex; gap: 16px; margin-bottom: 22px; position: relative; }
-.step:not(:last-child)::before { content: ''; position: absolute; left: 16px; top: 36px; width: 2px; height: calc(100% - 12px); background: var(--stroke); }
-.step-num { width: 34px; height: 34px; border-radius: 50%; background: var(--card2); border: 1px solid var(--stroke); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; color: var(--teal); flex-shrink: 0; z-index: 1; }
-.step-body  { padding-top: 4px; flex: 1; }
-.step-title { font-weight: 700; font-size: 14px; margin-bottom: 5px; }
-.step-desc  { font-size: 13px; color: var(--muted); line-height: 1.75; }
-.step-warning { margin-top: 10px; background: rgba(255,214,0,0.06); border: 1px solid rgba(255,214,0,0.2); border-radius: 8px; padding: 10px 14px; font-size: 12.5px; color: #FDE68A; display: flex; gap: 8px; }
-.step-tip      { margin-top: 10px; background: rgba(0,229,204,0.05); border: 1px solid rgba(0,229,204,0.15); border-radius: 8px; padding: 10px 14px; font-size: 12.5px; color: var(--muted); display: flex; gap: 8px; }
-code { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; background: rgba(0,229,204,0.08); color: var(--teal); padding: 2px 6px; border-radius: 4px; }
 
 /* ── FAQ ── */
 #faq { border-top: 1px solid var(--stroke); }
@@ -281,7 +263,6 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
   .nav-links { display: none; }
   .hero { padding: 56px 0 40px; }
   section { padding: 52px 0; }
-  .trust-hero { flex-direction: column; }
   .hero-stats { gap: 18px; }
 }
 
@@ -306,8 +287,8 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
     </a>
     <div class="nav-links">
       <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
       <a href="#trust">Security</a>
-      <a href="#install">Install Guide</a>
       <a href="#faq">FAQ</a>
     </div>
   </div>
@@ -321,7 +302,7 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
     <p class="hero-sub">Professional wireless presentation control. Turn your Android phone into a powerful PowerPoint remote — over local WiFi, no hardware needed.</p>
     <div class="hero-stats">
       <div class="stat"><div class="stat-val teal">WiFi</div><div class="stat-label">Connection</div></div>
-      <div class="stat"><div class="stat-val gold">₱699</div><div class="stat-label">Lifetime License</div></div>
+      <div class="stat"><div class="stat-val gold">₱699</div><div class="stat-label">Lifetime Pro</div></div>
       <div class="stat"><div class="stat-val purple">Zero</div><div class="stat-label">Subscriptions</div></div>
       <div class="stat"><div class="stat-val teal">6</div><div class="stat-label">Pro Features</div></div>
     </div>
@@ -329,16 +310,49 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
       <div class="dl-card windows">
         <div class="dl-icon">💻</div>
         <div class="dl-title">Windows Host</div>
-        <div class="dl-meta">Abiso_Clicker_Pro_Host_Setup.exe · ~18 MB · Windows 10+</div>
-        <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_Host_Setup.exe" class="dl-btn">↓ Download for Windows</a>
-        <div class="dl-hash"><span class="hash-label">SHA256</span><span>Posted after signed release build</span></div>
+        <div class="dl-meta">Abiso_Clicker_Pro_Host_Setup.exe</div>
+        <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_Host_Setup.exe" class="dl-btn">↓ Download Host</a>
       </div>
       <div class="dl-card android">
         <div class="dl-icon">📱</div>
         <div class="dl-title">Android App</div>
-        <div class="dl-meta">Abiso_Clicker_Pro_v1.apk · ~12 MB · Android 8+</div>
+        <div class="dl-meta">Abiso_Clicker_Pro_v1.apk</div>
         <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_v1.apk" class="dl-btn">↓ Download APK</a>
-        <div class="dl-hash"><span class="hash-label">SHA256</span><span>Posted after signed release build</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap" style="text-align: center;">
+    <div class="section-tag">Pricing</div>
+    <h2 class="section-title">Upgrade to Pro</h2>
+    <p class="section-sub" style="margin: 0 auto;">Choose your currency and unlock lifetime access. No subscriptions, ever.</p>
+    
+    <div class="price-grid">
+      <div class="price-card featured">
+        <div class="price-tag">₱699</div>
+        <span class="price-period">PHILIPPINES (LIFETIME)</span>
+        <div class="payment-methods">
+          <div class="method-icon"><span>GCash</span></div>
+          <div class="method-icon"><span>Maya</span></div>
+          <div class="method-icon"><span>GrabPay</span></div>
+        </div>
+        <div class="instruction-box">
+          <b>How to Pay:</b> Open the Android app, tap the <b>Pro</b> icon, and select <b>Pay via PayMongo</b>.
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-tag">$14.99</div>
+        <span class="price-period">INTERNATIONAL (LIFETIME)</span>
+        <div class="payment-methods">
+          <div class="method-icon"><span>PayPal</span></div>
+          <div class="method-icon"><span>Visa/MC</span></div>
+        </div>
+        <div class="instruction-box">
+          <b>How to Pay:</b> Open the Android app, tap the <b>Pro</b> icon, and select <b>Pay via PayPal</b>.
+        </div>
       </div>
     </div>
   </div>
@@ -346,100 +360,27 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
 
 <section id="features">
   <div class="wrap">
-    <div class="section-tag">What You Get</div>
-    <h2 class="section-title">Everything a Hardware Clicker Can't Do</h2>
-    <p class="section-sub">A ₱2,500 Logitech clicker does three things. Abiso Clicker Pro does six — plus features no hardware remote can ever have.</p>
+    <div class="section-tag">Features</div>
+    <h2 class="section-title">Professional Controls</h2>
     <div class="features-grid">
-      <div class="feat-card"><div class="feat-icon" style="background:rgba(56,189,248,0.1)">🖥️</div><div class="feat-title">Live Slide Preview</div><div class="feat-desc">See current and next slides on your phone in real time. Never lose your place.</div></div>
-      <div class="feat-card"><div class="feat-icon" style="background:rgba(239,68,68,0.1)">🔴</div><div class="feat-title">Laser Pointer</div><div class="feat-desc">Drag your finger on the preview to move a laser dot on the projector screen.</div></div>
-      <div class="feat-card"><div class="feat-icon" style="background:rgba(124,77,255,0.1)">📝</div><div class="feat-title">Speaker Notes</div><div class="feat-desc">Read private notes on your phone while the audience sees only the clean slide.</div></div>
-      <div class="feat-card"><div class="feat-icon" style="background:rgba(255,214,0,0.1)">⬛</div><div class="feat-title">Black Screen</div><div class="feat-desc">One tap instantly blanks the projector. Perfect for Q&amp;A or dramatic reveals.</div></div>
-      <div class="feat-card"><div class="feat-icon" style="background:rgba(0,229,204,0.1)">⏱️</div><div class="feat-title">Dual Timers</div><div class="feat-desc">Track total session time and per-slide time simultaneously, live on screen.</div></div>
-      <div class="feat-card"><div class="feat-icon" style="background:rgba(0,230,118,0.1)">🔊</div><div class="feat-title">Media Controls</div><div class="feat-desc">Control laptop volume, mute, and media playback without touching the keyboard.</div></div>
+      <div class="feat-card"><div class="feat-icon" style="background:rgba(56,189,248,0.1)">🖥️</div><div class="feat-title">Slide Preview</div><div class="feat-desc">See slides on your phone.</div></div>
+      <div class="feat-card"><div class="feat-icon" style="background:rgba(239,68,68,0.1)">🔴</div><div class="feat-title">Laser Pointer</div><div class="feat-desc">Virtual laser via touchscreen.</div></div>
+      <div class="feat-card"><div class="feat-icon" style="background:rgba(124,77,255,0.1)">📝</div><div class="feat-title">Speaker Notes</div><div class="feat-desc">Private notes on your palm.</div></div>
     </div>
   </div>
 </section>
 
 <section id="trust">
   <div class="wrap">
-    <div class="section-tag">Security &amp; Trust</div>
-    <h2 class="section-title">Worried About Safety? Good. You Should Be.</h2>
-    <p class="section-sub" style="margin-bottom:32px;">We take security seriously. Verify everything before you install — here is exactly how.</p>
+    <div class="section-tag">Security</div>
+    <h2 class="section-title">Trusted & Transparent</h2>
     <div class="trust-hero">
       <div class="trust-shield">🛡️</div>
-      <div style="flex:1; min-width:220px;">
-        <h3>Verify Before You Install — Always</h3>
-        <p>Both files can be scanned by VirusTotal — a free service that checks against 70+ antivirus engines simultaneously. You do not need to take our word for it. Scan the file yourself. A clean result is the strongest proof a file is safe.</p>
-        <a href="https://www.virustotal.com/gui/home/upload" target="_blank" rel="noopener" class="vt-btn">🔍 Open VirusTotal — Scan the Files Yourself</a>
+      <div style="flex:1;">
+        <h3>Verify Before You Install</h3>
+        <p>Scan our files on VirusTotal. Our Play Store listing is currently under process, so we distribute via GitHub to keep your costs low.</p>
+        <a href="https://www.virustotal.com" target="_blank" class="vt-btn">🔍 VirusTotal Scanner</a>
       </div>
-    </div>
-    <div class="trust-grid">
-      <div class="trust-card">
-        <h4>✦ WHAT THE APP ACTUALLY DOES</h4>
-        <p>The Windows Host opens a local WebSocket server on port 8181. It reads your open PowerPoint file and sends slide images to your phone over local WiFi. Nothing leaves your network. No cloud is involved in the presentation itself.</p>
-        <br><p>The Android app connects to that local server, shows slide previews, and sends navigation commands back. Firebase is used only to verify your license — not to access your files.</p>
-      </div>
-      <div class="trust-card">
-        <h4>✦ ANDROID APP PERMISSIONS</h4>
-        <p style="margin-bottom:10px;">The APK requests only what is absolutely necessary:</p>
-        <div class="perm-grid">
-          <div class="perm-item"><div class="perm-check">✓</div>Internet (license check)</div>
-          <div class="perm-item"><div class="perm-check">✓</div>Camera (QR code scan)</div>
-          <div class="perm-item"><div class="perm-x">✕</div>Contacts</div>
-          <div class="perm-item"><div class="perm-x">✕</div>Microphone</div>
-          <div class="perm-item"><div class="perm-x">✕</div>Storage / Files</div>
-          <div class="perm-item"><div class="perm-x">✕</div>Location</div>
-          <div class="perm-item"><div class="perm-x">✕</div>SMS / Calls</div>
-          <div class="perm-item"><div class="perm-x">✕</div>Background data</div>
-        </div>
-      </div>
-      <div class="trust-card">
-        <h4>✦ WHY WINDOWS SHOWS A WARNING</h4>
-        <p>Microsoft SmartScreen blocks EXE files that do not have an Extended Validation (EV) code-signing certificate. These cost ₱25,000+ per year. We are a small independent team and have not purchased one yet.</p>
-        <br><p>The warning does <strong style="color:var(--text)">not</strong> mean the file is dangerous. It means it is new and unsigned. Scan it on VirusTotal to confirm it is clean, then proceed past the warning.</p>
-      </div>
-      <div class="trust-card">
-        <h4>✦ WHY ANDROID BLOCKS THE APK</h4>
-        <p>Android blocks APK files from outside the Play Store by default. This happens to all sideloaded apps — including major apps like Telegram which also distribute APKs directly.</p>
-        <br><p>The official Google Play Store listing is currently under process. Your purchase directly helps fund the registration. We plan to move to the official store as soon as certification is complete.</p>
-      </div>
-    </div>
-    <div class="trust-card">
-      <h4>✦ VERIFY THE FILE HASH (ADVANCED)</h4>
-      <p style="margin-bottom:12px;">Compare the file's SHA256 hash to the one published above the download buttons. Run these commands to generate the hash:</p>
-      <div class="dl-hash"><span class="hash-label">PowerShell</span><span>Get-FileHash "Abiso_Clicker_Pro_Host_Setup.exe" -Algorithm SHA256 | Select-Object Hash</span></div>
-      <div class="dl-hash" style="margin-top:8px;"><span class="hash-label">Terminal</span><span>shasum -a 256 ~/Downloads/Abiso_Clicker_Pro_v1.apk</span></div>
-      <p style="margin-top:12px; color:var(--muted); font-size:13px;">If the output matches exactly, the file is identical to what we released. If it differs by even one character, do not install it.</p>
-    </div>
-  </div>
-</section>
-
-<section id="install">
-  <div class="wrap">
-    <div class="section-tag">Installation Guide</div>
-    <h2 class="section-title">Step-by-Step Setup</h2>
-    <p class="section-sub" style="margin-bottom:32px;">The security warnings are expected and safe to bypass after verifying the files. Follow these steps exactly.</p>
-    <div class="tab-row">
-      <button class="tab-btn active" onclick="switchTab('windows',this)">💻 Windows Host</button>
-      <button class="tab-btn" onclick="switchTab('android',this)">📱 Android App</button>
-    </div>
-
-    <div class="tab-panel active" id="tab-windows">
-      <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-title">Download the Windows Host</div><div class="step-desc">Click the download button above. Your browser may warn the file could be harmful — click <strong>Keep</strong> or <strong>Keep anyway</strong>. This is standard for any unsigned EXE.</div><div class="step-tip">💡 Before proceeding, upload the EXE to <a href="https://www.virustotal.com" target="_blank" style="color:var(--teal)">virustotal.com</a> and confirm a clean scan. Takes about 60 seconds.</div></div></div>
-      <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-title">Bypass the SmartScreen Warning</div><div class="step-desc">Double-click the EXE. Windows Defender SmartScreen will show <strong style="color:var(--text)">"Windows protected your PC."</strong> This is expected for all new unsigned software.</div><div class="step-warning">⚠️ Click <strong>"More info"</strong> (the small text link below the message). A button labeled <strong>"Run anyway"</strong> will appear. Click it.</div></div></div>
-      <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-title">Complete the Installer</div><div class="step-desc">Follow the on-screen steps — Next, accept the license, Install. The program will be added to your Start Menu.</div><div class="step-tip">💡 If Windows Firewall asks to allow network access, click <strong>Allow access</strong>. This is required for your phone to connect.</div></div></div>
-      <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-title">Run as Administrator (Recommended)</div><div class="step-desc">Right-click the Abiso Clicker Pro shortcut → <strong>Run as administrator</strong>. This ensures smooth control of PowerPoint, especially for media-heavy presentations.</div></div></div>
-      <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-title">Open PowerPoint and Note the IP Address</div><div class="step-desc">Launch PowerPoint and open your file. The Abiso Host window will display your laptop's local IP address — it looks like <code>192.168.1.X</code>. You will enter this into the phone app.</div></div></div>
-      <div class="step"><div class="step-num">6</div><div class="step-body"><div class="step-title">Keep the Host Window Open</div><div class="step-desc">Do not close the Host window during your session. You can minimize it, but closing it will disconnect your phone.</div></div></div>
-    </div>
-
-    <div class="tab-panel" id="tab-android">
-      <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-title">Download the APK to Your Phone</div><div class="step-desc">Open this page on your Android phone and tap "Download APK." Your browser may warn this type of file could be harmful — tap <strong>Download anyway</strong>.</div><div class="step-tip">💡 Alternatively, download to your PC and transfer via USB or Google Drive.</div></div></div>
-      <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-title">Allow Installation from Unknown Sources</div><div class="step-desc">Tap the downloaded APK file. Android will show: <strong style="color:var(--text)">"Your phone is not allowed to install unknown apps from this source."</strong></div><div class="step-warning">⚠️ Tap <strong>Settings</strong> in that prompt. Enable <strong>"Allow from this source"</strong> or <strong>"Install unknown apps."</strong> Press back — the install dialog resumes automatically.</div></div></div>
-      <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-title">Review Permissions and Install</div><div class="step-desc">Android shows the app's permissions. You will see only <strong>Internet</strong> and <strong>Camera</strong> (for QR scanning). No contacts, storage, or location access. Tap <strong>Install</strong>.</div></div></div>
-      <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-title">Play Protect Warning (if shown)</div><div class="step-desc">Google Play Protect may warn the app was not verified. This is standard for all sideloaded APKs. Tap <strong>"Install anyway"</strong> to continue.</div><div class="step-tip">💡 For maximum assurance, scan the APK with Malwarebytes Mobile before this step.</div></div></div>
-      <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-title">Connect and Start Presenting</div><div class="step-desc">Open Abiso Clicker Pro. Ensure your phone and laptop are on the same WiFi. Enter the IP address shown in the Host window, or tap the QR icon to scan the code. Tap <strong>CONNECT</strong>.</div></div></div>
-      <div class="step"><div class="step-num">6</div><div class="step-body"><div class="step-title">Disable "Unknown Sources" After Install</div><div class="step-desc">Go to <strong>Settings → Apps → Special App Access → Install unknown apps</strong> and turn off the permission you granted in Step 2. The app is installed — you no longer need it enabled.</div></div></div>
     </div>
   </div>
 </section>
@@ -447,44 +388,24 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
 <section id="faq">
   <div class="wrap">
     <div class="section-tag">FAQ</div>
-    <h2 class="section-title">Common Questions</h2>
-    <p class="section-sub" style="margin-bottom:32px;">Answers to the most common concerns before downloading.</p>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is this a virus? My antivirus flagged it.<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">No. Both files are clean. Antivirus programs sometimes flag unsigned software with a "false positive" — they don't recognize the new file, not that they found malicious code. Upload the file to <a href="https://www.virustotal.com" target="_blank" style="color:var(--teal)">VirusTotal.com</a> to check it against 70+ engines. A clean result there is far more reliable than a single antivirus flagging a new file.</div></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Why isn't the app on the Google Play Store? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">The official listing for Abiso Clicker Pro is currently under process. As a small independent team in the Philippines, we are working through the certification requirements. In the meantime, the APK is distributed safely from our official GitHub releases page.</div></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does the app access my PowerPoint files or send them to the internet?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">No. Your files never leave your local network. The Windows Host reads your open PowerPoint file, converts slides to images, and sends them directly to your phone over local WiFi — never to any cloud server. The only internet traffic is the license check with Firebase when you sign in.</div></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">My phone and laptop can't connect. What do I do?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Both devices must be on the same WiFi network. If your office or school WiFi blocks device-to-device connections, enable <strong>Mobile Hotspot</strong> on your Windows laptop and connect your phone's WiFi to it. This creates a private direct link that bypasses network restrictions entirely.</div></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What happens to my Pro license if I lose my phone?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Your license is tied to your Google account, not your device. Get a new phone, download the APK, sign in with the same Google account, and your Pro status is restored automatically — no support ticket, no extra payment.</div></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does it work without internet during my presentation?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes. Once signed in at least once with internet, your Pro license is cached to your phone's local storage. After that, no internet is needed to confirm your license. The presentation control runs entirely over local WiFi between phone and laptop.</div></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What are the system requirements?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner"><strong style="color:var(--text)">Windows Host:</strong> Windows 10 or later, Microsoft PowerPoint (any recent version), .NET 8 Runtime (installer will prompt if absent). 4 GB RAM recommended.<br><br><strong style="color:var(--text)">Android App:</strong> Android 8.0 (Oreo) or later. Any Android phone made after 2018 will work fine.</div></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Who made this? Can I trust a small team?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Abiso Clicker Pro is built by a small independent software team in the Philippines. We earn trust through transparency — published file hashes, clear explanation of what the app does, and encouraging you to scan the files yourself. We read every support email personally. Reach us at <a href="mailto:abisosolutions@gmail.com" style="color:var(--teal)">abisosolutions@gmail.com</a>.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is my license permanent?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes. Your license is tied to your Google account. If you change phones, just sign in and your Pro status is restored instantly.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does it work offline?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes. Once your license is verified once via internet, the actual presentation control runs entirely over your local WiFi and does not need internet.</div></div></div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="footer-logo">
-      <div class="nav-logo">🎯</div>
-      <span class="footer-name">ABISO CLICKER PRO</span>
-    </div>
+    <div class="footer-logo">🎯 <span class="footer-name">ABISO CLICKER PRO</span></div>
     <p class="footer-tagline">Professional Wireless Presentation Control · Philippines</p>
     <div class="footer-links">
-      <a href="mailto:abisosolutions@gmail.com">abisosolutions@gmail.com</a>
-      <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution" target="_blank">GitHub Releases</a>
-      <a href="https://www.virustotal.com" target="_blank">VirusTotal Scanner</a>
-      <a href="#trust">Security Info</a>
-      <a href="#faq">FAQ</a>
+      <a href="mailto:abisosolutions@gmail.com">Contact Support</a>
+      <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution" target="_blank">GitHub</a>
     </div>
-    <div class="footer-copy">© 2025 Abiso Solutions · All rights reserved · v1.0 Stable</div>
+    <div class="footer-copy">© 2026 Abiso Solutions · v1.0 Stable</div>
   </div>
 </footer>
 
 <script>
-function switchTab(id, btn) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('tab-' + id).classList.add('active');
-  btn.classList.add('active');
-}
 function toggleFaq(el) {
   const item = el.parentElement;
   const isOpen = item.classList.contains('open');
