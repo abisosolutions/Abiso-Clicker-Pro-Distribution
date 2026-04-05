@@ -6,7 +6,7 @@
 <title>Abiso Clicker Pro — Official Download</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --teal:   #00E5CC;
@@ -47,30 +47,27 @@ body::before {
 .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
 section { padding: 64px 0; }
 
-/* ── TYPOGRAPHY — THE FIX ──
-   Syne is a wide display font. Letter-spacing on headings makes it look
-   stretched. Zero letter-spacing on h1/h2. Reserve spacing for small labels only. */
+/* ── TYPOGRAPHY — READABILITY FIX ── */
 h1 {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(1.85rem, 6vw, 2.9rem);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.2rem);
   font-weight: 800;
   color: var(--text);
-  letter-spacing: 0;
-  line-height: 1.15;
+  letter-spacing: -1px;
+  line-height: 1.1;
   margin-bottom: 14px;
 }
 h1 .accent { color: var(--teal); }
 h2.section-title {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(1.35rem, 3.5vw, 1.9rem);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
   font-weight: 800;
-  letter-spacing: 0;
+  letter-spacing: -0.5px;
   line-height: 1.2;
   margin-bottom: 10px;
 }
-h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; letter-spacing: 0; }
+h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; letter-spacing: 0; }
 
-/* Small pill/badge labels — letter-spacing is fine at small sizes */
 .pill-label {
   display: inline-flex;
   align-items: center;
@@ -122,8 +119,8 @@ nav {
   font-size: 16px;
 }
 .nav-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 13px; font-weight: 800; color: var(--text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px; font-weight: 800; color: var(--text);
   letter-spacing: 0.5px;
 }
 .nav-links { display: flex; gap: 24px; }
@@ -141,13 +138,13 @@ nav {
 }
 .hero-sub { font-size: 16px; color: var(--muted); max-width: 500px; margin: 0 auto 40px; line-height: 1.75; }
 .hero-stats { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; margin-bottom: 48px; }
-.stat-val { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: 0; }
+.stat-val { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.6rem; font-weight: 800; }
 .stat-val.teal   { color: var(--teal); }
 .stat-val.gold   { color: var(--gold); }
 .stat-val.purple { color: var(--purple); }
 .stat-label { font-size: 10px; color: var(--dim); letter-spacing: 0.4px; text-transform: uppercase; margin-top: 2px; }
 
-/* ── DOWNLOAD — mobile-first, stacked then side-by-side ── */
+/* ── DOWNLOAD ── */
 .dl-grid { display: flex; flex-direction: column; gap: 14px; max-width: 680px; margin: 0 auto; }
 @media (min-width: 540px) { .dl-grid { flex-direction: row; } }
 
@@ -160,16 +157,13 @@ nav {
   text-align: left;
   transition: border-color 0.2s, transform 0.2s;
 }
-.dl-card:hover { transform: translateY(-2px); }
-.dl-card.windows { border-color: rgba(0,229,204,0.3); }
-.dl-card.android { border-color: rgba(124,77,255,0.3); }
+.dl-card:hover { transform: translateY(-2px); border-color: rgba(0,229,204,0.3); }
 .dl-icon { width: 44px; height: 44px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 12px; }
 .windows .dl-icon { background: rgba(0,229,204,0.1); }
 .android .dl-icon { background: rgba(124,77,255,0.1); }
 .dl-title { font-weight: 700; font-size: 15px; margin-bottom: 3px; }
 .dl-meta  { font-size: 11px; color: var(--dim); font-family: 'JetBrains Mono', monospace; margin-bottom: 16px; }
 
-/* Big thumb-friendly button */
 .dl-btn {
   display: flex; align-items: center; justify-content: center; gap: 8px;
   padding: 16px 14px;
@@ -258,7 +252,7 @@ nav {
 .step-title { font-weight: 700; font-size: 14px; margin-bottom: 5px; }
 .step-desc  { font-size: 13px; color: var(--muted); line-height: 1.75; }
 .step-warning { margin-top: 10px; background: rgba(255,214,0,0.06); border: 1px solid rgba(255,214,0,0.2); border-radius: 8px; padding: 10px 14px; font-size: 12.5px; color: #FDE68A; display: flex; gap: 8px; }
-.step-tip     { margin-top: 10px; background: rgba(0,229,204,0.05); border: 1px solid rgba(0,229,204,0.15); border-radius: 8px; padding: 10px 14px; font-size: 12.5px; color: var(--muted); display: flex; gap: 8px; }
+.step-tip      { margin-top: 10px; background: rgba(0,229,204,0.05); border: 1px solid rgba(0,229,204,0.15); border-radius: 8px; padding: 10px 14px; font-size: 12.5px; color: var(--muted); display: flex; gap: 8px; }
 code { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; background: rgba(0,229,204,0.08); color: var(--teal); padding: 2px 6px; border-radius: 4px; }
 
 /* ── FAQ ── */
@@ -275,7 +269,7 @@ code { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; background: 
 /* ── FOOTER ── */
 footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: center; }
 .footer-logo { display: flex; align-items: center; justify-content: center; gap: 9px; margin-bottom: 12px; }
-.footer-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.5px; }
+.footer-name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.5px; }
 .footer-tagline { font-size: 13px; color: var(--dim); margin-bottom: 20px; }
 .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 18px; }
 .footer-links a { font-size: 12px; color: var(--dim); text-decoration: none; transition: color 0.2s; }
@@ -304,7 +298,6 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-brand">
@@ -320,7 +313,6 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="wrap">
     <div class="pill-label">v 1.0 · Stable Release</div>
@@ -337,7 +329,7 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
       <div class="dl-card windows">
         <div class="dl-icon">💻</div>
         <div class="dl-title">Windows Host</div>
-        <div class="dl-meta">AbisoPro_Host_Setup.exe · ~18 MB · Windows 10+</div>
+        <div class="dl-meta">Abiso_Clicker_Pro_Host_Setup.exe · ~18 MB · Windows 10+</div>
         <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_Host_Setup.exe" class="dl-btn">↓ Download for Windows</a>
         <div class="dl-hash"><span class="hash-label">SHA256</span><span>Posted after signed release build</span></div>
       </div>
@@ -352,7 +344,6 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
   </div>
 </section>
 
-<!-- FEATURES -->
 <section id="features">
   <div class="wrap">
     <div class="section-tag">What You Get</div>
@@ -369,7 +360,6 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
   </div>
 </section>
 
-<!-- TRUST -->
 <section id="trust">
   <div class="wrap">
     <div class="section-tag">Security &amp; Trust</div>
@@ -411,7 +401,7 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
       <div class="trust-card">
         <h4>✦ WHY ANDROID BLOCKS THE APK</h4>
         <p>Android blocks APK files from outside the Play Store by default. This happens to all sideloaded apps — including major apps like Telegram which also distribute APKs directly.</p>
-        <br><p>We are not on the Play Store yet because the $25 developer fee is outside our current budget. Your purchase directly helps fund this. We plan to publish as soon as we have the funds.</p>
+        <br><p>The official Google Play Store listing is currently under process. Your purchase directly helps fund the registration. We plan to move to the official store as soon as certification is complete.</p>
       </div>
     </div>
     <div class="trust-card">
@@ -424,7 +414,6 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
   </div>
 </section>
 
-<!-- INSTALL -->
 <section id="install">
   <div class="wrap">
     <div class="section-tag">Installation Guide</div>
@@ -455,31 +444,29 @@ footer { border-top: 1px solid var(--stroke); padding: 40px 0; text-align: cente
   </div>
 </section>
 
-<!-- FAQ -->
 <section id="faq">
   <div class="wrap">
     <div class="section-tag">FAQ</div>
     <h2 class="section-title">Common Questions</h2>
     <p class="section-sub" style="margin-bottom:32px;">Answers to the most common concerns before downloading.</p>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is this a virus? My antivirus flagged it.<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">No. Both files are clean. Antivirus programs sometimes flag unsigned software with a "false positive" — they don't recognize the new file, not that they found malicious code. Upload the file to <a href="https://www.virustotal.com" target="_blank" style="color:var(--teal)">VirusTotal.com</a> to check it against 70+ engines. A clean result there is far more reliable than a single antivirus flagging a new file.</div></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Why isn't the app on the Google Play Store?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Publishing on Google Play requires a one-time $25 USD developer fee. As a small independent team in Davao City, Philippines, we are working toward this. Your purchase directly helps fund it. In the meantime, the APK is distributed from our official GitHub releases page.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Why isn't the app on the Google Play Store? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">The official listing for Abiso Clicker Pro is currently under process. As a small independent team in the Philippines, we are working through the certification requirements. In the meantime, the APK is distributed safely from our official GitHub releases page.</div></div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does the app access my PowerPoint files or send them to the internet?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">No. Your files never leave your local network. The Windows Host reads your open PowerPoint file, converts slides to images, and sends them directly to your phone over local WiFi — never to any cloud server. The only internet traffic is the license check with Firebase when you sign in.</div></div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">My phone and laptop can't connect. What do I do?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Both devices must be on the same WiFi network. If your office or school WiFi blocks device-to-device connections, enable <strong>Mobile Hotspot</strong> on your Windows laptop and connect your phone's WiFi to it. This creates a private direct link that bypasses network restrictions entirely.</div></div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What happens to my Pro license if I lose my phone?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Your license is tied to your Google account, not your device. Get a new phone, download the APK, sign in with the same Google account, and your Pro status is restored automatically — no support ticket, no extra payment.</div></div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does it work without internet during my presentation?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes. Once signed in at least once with internet, your Pro license is cached to your phone's local storage. After that, no internet is needed to confirm your license. The presentation control runs entirely over local WiFi between phone and laptop.</div></div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What are the system requirements?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner"><strong style="color:var(--text)">Windows Host:</strong> Windows 10 or later, Microsoft PowerPoint (any recent version), .NET 8 Runtime (installer will prompt if absent). 4 GB RAM recommended.<br><br><strong style="color:var(--text)">Android App:</strong> Android 8.0 (Oreo) or later. Any Android phone made after 2018 will work fine.</div></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Who made this? Can I trust a small team?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Abiso Clicker Pro is built by a small independent software team in Davao City, Philippines. We earn trust through transparency — published file hashes, clear explanation of what the app does, and encouraging you to scan the files yourself. We read every support email personally. Reach us at <a href="mailto:abisosolutions@gmail.com" style="color:var(--teal)">abisosolutions@gmail.com</a>.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Who made this? Can I trust a small team?<span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Abiso Clicker Pro is built by a small independent software team in the Philippines. We earn trust through transparency — published file hashes, clear explanation of what the app does, and encouraging you to scan the files yourself. We read every support email personally. Reach us at <a href="mailto:abisosolutions@gmail.com" style="color:var(--teal)">abisosolutions@gmail.com</a>.</div></div></div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="footer-logo">
       <div class="nav-logo">🎯</div>
       <span class="footer-name">ABISO CLICKER PRO</span>
     </div>
-    <p class="footer-tagline">Professional Wireless Presentation Control · Davao City, Philippines</p>
+    <p class="footer-tagline">Professional Wireless Presentation Control · Philippines</p>
     <div class="footer-links">
       <a href="mailto:abisosolutions@gmail.com">abisosolutions@gmail.com</a>
       <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution" target="_blank">GitHub Releases</a>
