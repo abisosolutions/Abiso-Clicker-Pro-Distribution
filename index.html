@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Abiso Clicker Pro is an enterprise-grade wireless presentation remote for Windows and Android. Control PowerPoint, Canva, and Google Slides with zero lag.">
     <title>Abiso Clicker Pro V3.0 | Enterprise Presentation Control</title>
+    <link rel="icon" type="image/png" href="new_abiso_logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -22,7 +23,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
         a { text-decoration: none; color: var(--accent); }
         
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
@@ -30,12 +31,25 @@
         .badge.v3 { background: rgba(124, 77, 255, 0.2); color: #B388FF; border: 1px solid var(--purple); }
         .badge.promo { background: rgba(255, 214, 0, 0.15); color: var(--gold); border: 1px solid var(--gold); }
 
+        /* NAV BAR */
+        nav { position: sticky; top: 0; z-index: 100; background: rgba(8,11,18,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 12px 0; }
+        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .nav-logo { width: 32px; height: 32px; object-fit: contain; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--purple)); padding: 4px; }
+        .nav-title { font-size: 14px; font-weight: 800; color: var(--text-main); letter-spacing: 0.5px; }
+        .nav-links { display: flex; gap: 24px; }
+        .nav-links a { color: var(--text-muted); font-size: 13px; font-weight: 600; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--accent); }
+
         /* HERO SECTION */
-        header { padding: 80px 0 60px; text-align: center; border-bottom: 1px solid var(--surface-elevated); background: radial-gradient(circle at top, #111827 0%, #080B12 100%); }
-        h1 { font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+        header { padding: 60px 0 60px; text-align: center; border-bottom: 1px solid var(--surface-elevated); background: radial-gradient(circle at top, #111827 0%, #080B12 100%); }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
         h1 span { color: var(--accent); }
-        .hero-sub { font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 40px; }
+        .hero-sub { font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 30px; }
         
+        .hero-video-wrapper { max-width: 250px; margin: 0 auto 32px; border-radius: 20px; overflow: hidden; border: 4px solid var(--surface-elevated); box-shadow: 0 16px 40px var(--accent-glow); }
+        .hero-video-wrapper video { width: 100%; display: block; object-fit: cover; }
+
         .promo-box { background: var(--surface); border: 1px solid var(--gold); border-radius: 16px; padding: 24px; max-width: 700px; margin: 0 auto 40px; box-shadow: 0 10px 30px rgba(255, 214, 0, 0.05); }
         .promo-box h3 { color: var(--gold); font-size: 1.4rem; margin-bottom: 8px; }
         .promo-box p { font-size: 1rem; color: var(--text-muted); }
@@ -55,56 +69,82 @@
 
         /* RISK REVERSAL */
         .risk-section { padding: 60px 0; text-align: center; background: var(--surface); border-bottom: 1px solid var(--surface-elevated); }
-        .risk-section h2 { font-size: 2.5rem; margin-bottom: 16px; }
+        .risk-section h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 16px; }
 
         /* FEATURES ARSENAL */
         .features { padding: 80px 0; }
         .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: 2.5rem; margin-bottom: 16px; }
-        .feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; }
+        .section-header h2 { font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 16px; }
+        .feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
         .feat-card { background: var(--surface); border: 1px solid var(--surface-elevated); border-radius: 16px; padding: 32px; }
         .feat-icon { font-size: 2rem; margin-bottom: 16px; }
         .feat-card h4 { font-size: 1.2rem; margin-bottom: 12px; color: var(--text-main); }
         .feat-card p { color: var(--text-muted); font-size: 0.95rem; }
 
+        /* VIDEO DEMO SECTION */
+        .demo-section { padding: 80px 0; background: var(--surface); border-top: 1px solid var(--surface-elevated); }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; }
+        .video-card { background: var(--bg-color); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+        .video-label { padding: 12px 16px; font-size: 12px; font-family: 'JetBrains Mono', monospace; color: var(--accent); border-bottom: 1px solid var(--border); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
         /* TRUST & PRIVACY */
-        .trust-section { padding: 80px 0; background: var(--surface); border-top: 1px solid var(--surface-elevated); border-bottom: 1px solid var(--surface-elevated); }
-        .trust-box { background: var(--bg-color); border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin-top: 32px; }
+        .trust-section { padding: 80px 0; background: var(--bg-color); border-top: 1px solid var(--surface-elevated); border-bottom: 1px solid var(--surface-elevated); }
+        .trust-box { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin-top: 32px; }
         .trust-box ul { list-style: none; margin-top: 24px; }
         .trust-box li { margin-bottom: 16px; padding-left: 32px; position: relative; color: var(--text-muted); }
         .trust-box li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
-        .vt-link { display: inline-block; margin-top: 24px; padding: 12px 24px; border: 1px solid var(--border); border-radius: 8px; color: var(--text-main); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
-        .vt-link:hover { border-color: var(--accent); color: var(--accent); }
+        .vt-link { display: inline-block; margin-top: 24px; padding: 12px 24px; border: 1px solid var(--border); border-radius: 8px; color: var(--text-main); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; transition: all 0.2s; }
+        .vt-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
 
         /* INSTALL TABS */
-        .install { padding: 80px 0; }
-        .tabs { display: flex; justify-content: center; gap: 16px; margin-bottom: 40px; }
-        .tab-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text-muted); padding: 12px 24px; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; }
+        .install { padding: 80px 0; background: var(--surface); }
+        .tabs { display: flex; justify-content: center; gap: 16px; margin-bottom: 40px; flex-wrap: wrap; }
+        .tab-btn { background: var(--bg-color); border: 1px solid var(--border); color: var(--text-muted); padding: 12px 24px; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s; }
         .tab-btn.active { background: var(--accent-glow); color: var(--accent); border-color: var(--accent); }
-        .tab-content { display: none; background: var(--surface); border: 1px solid var(--surface-elevated); border-radius: 16px; padding: 40px; }
+        .tab-btn:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
+        .tab-content { display: none; background: var(--bg-color); border: 1px solid var(--surface-elevated); border-radius: 16px; padding: 40px; }
         .tab-content.active { display: block; }
         .tab-content ol { padding-left: 20px; color: var(--text-muted); }
         .tab-content li { margin-bottom: 16px; }
         .tab-content strong { color: var(--text-main); }
 
         /* FAQ */
-        .faq { padding: 80px 0; background: var(--surface); }
+        .faq { padding: 80px 0; background: var(--bg-color); }
         .faq-item { border-bottom: 1px solid var(--surface-elevated); padding: 24px 0; }
-        .faq-q { font-size: 1.2rem; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .faq-q::after { content: '+'; color: var(--accent); font-size: 1.5rem; }
-        .faq-item.active .faq-q::after { content: '−'; }
-        .faq-a { display: none; margin-top: 16px; color: var(--text-muted); padding-right: 40px; }
-        .faq-item.active .faq-a { display: block; }
+        .faq-q { font-size: 1.2rem; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: color 0.2s; }
+        .faq-q:hover { color: var(--accent); }
+        .faq-q::after { content: '+'; color: var(--accent); font-size: 1.5rem; transition: transform 0.3s; }
+        .faq-item.active .faq-q::after { transform: rotate(45deg); }
+        .faq-a { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease; color: var(--text-muted); padding-right: 40px; }
+        .faq-item.active .faq-a { max-height: 500px; opacity: 1; margin-top: 16px; }
 
-        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--surface-elevated); color: var(--text-muted); font-size: 0.9rem; }
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--surface-elevated); color: var(--text-muted); font-size: 0.9rem; background: var(--surface); }
 
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
             .tabs { flex-direction: column; }
         }
     </style>
 </head>
 <body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">
+                <img src="new_abiso_logo.png" class="nav-logo" alt="Abiso Logo">
+                <span class="nav-title">ABISO CLICKER PRO</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#demo">Demo</a>
+                <a href="#install">Install</a>
+                <a href="#faq">FAQ</a>
+            </div>
+        </div>
+    </nav>
 
     <header>
         <div class="container">
@@ -112,10 +152,16 @@
             <h1>Ditch the USB Dongle.<br><span>Command the Stage.</span></h1>
             <p class="hero-sub">Turn your Android phone into an elite presentation command center. Seamlessly control <strong>PowerPoint, Canva, and Google Slides</strong> with zero-lag, live speaker notes, and interactive stage tools.</p>
 
+            <div class="hero-video-wrapper">
+                <video autoplay loop muted playsinline>
+                    <source src="demo.mp4" type="video/mp4">
+                </video>
+            </div>
+
             <div class="promo-box">
                 <span class="badge promo">🎉 FOUNDER'S EDITION (EARLY ACCESS)</span>
                 <h3>Lifetime Pro License for just ₱699 / $14.99</h3>
-                <p>Legacy hardware clickers cost ₱6,000+ and only have 3 buttons. By downloading directly today before our official app store rollout, you avoid all future subscriptions and lock in our Founder's pricing forever.</p>
+                <p>Legacy hardware clickers cost ₱6,000+ and only have 3 buttons. By downloading directly today before our broader app store rollout, you avoid all future subscriptions and lock in our Founder's pricing forever.</p>
                 <div class="limit">⚠️ Strictly limited to the first 1,000 early adopters.</div>
             </div>
 
@@ -123,12 +169,12 @@
                 <div class="dl-card">
                     <h3>💻 Windows Host</h3>
                     <p>The local server for your Windows 10/11 laptop. No admin rights required for basic use.</p>
-                    <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_Host_Setup.exe" class="btn btn-primary">Download .exe</a>
+                    <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_Host_Setup_v3.exe" class="btn btn-primary">Download .exe</a>
                 </div>
                 <div class="dl-card">
                     <h3>📱 Android App</h3>
                     <p>The master controller. Sideload this APK onto any Android 8.0+ device.</p>
-                    <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_v1.apk" class="btn btn-secondary">Download .apk</a>
+                    <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_v3.apk" class="btn btn-secondary">Download .apk</a>
                 </div>
                 <div class="dl-card">
                     <h3>🌐 Edge Bridge</h3>
@@ -148,42 +194,115 @@
         </div>
     </section>
 
-    <section class="features">
+    <section id="features" class="features">
         <div class="container">
             <div class="section-header">
                 <h2>The Stage Arsenal</h2>
                 <p style="color: var(--text-muted);">Everything a piece of plastic can't do.</p>
             </div>
             <div class="feat-grid">
+                
+                <div class="feat-card">
+                    <div class="feat-icon">⚡</div>
+                    <h4>0ms Slide Navigation</h4>
+                    <p>Experience instant hardware-level key injection for next/previous slides. Jump to any specific slide instantly from the thumbnail grid on your phone.</p>
+                </div>
+
                 <div class="feat-card">
                     <div class="feat-icon">📱</div>
-                    <h4>Teleprompter Focus Mode</h4>
-                    <p>Terrified of forgetting your lines? Read your secret speaker notes right on your phone screen while the audience only sees the slides. Includes silent haptic pacing alerts.</p>
+                    <h4>Teleprompter & Live Preview</h4>
+                    <p>Read your secret speaker notes right on your phone while the audience only sees the presentation. Includes silent haptic pacing alerts so you never lose track of time.</p>
                 </div>
+                
                 <div class="feat-card">
                     <div class="feat-icon">🔴</div>
                     <h4>144Hz Vector Laser & Avatars</h4>
-                    <p>Tired of shaky hands? Use a buttery-smooth digital laser (Butterflies, Wands, Birds, or Custom Logos) that renders perfectly on projectors and Smart TVs.</p>
+                    <p>Tired of shaky hands? Use a buttery-smooth digital laser (Butterflies, Wands, Birds, Dots, or Custom Logos) with sparkling trails that render perfectly on projectors.</p>
                 </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon">🔦</div>
+                    <h4>Spotlight Focus Beams</h4>
+                    <p>Dim the entire room's screen and highlight specific data points or charts using fully adjustable circular or rectangular spotlight beams.</p>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon">🔍</div>
+                    <h4>High-DPI Vector Magnifier</h4>
+                    <p>Presenting complex charts or data? Zoom into fine-print diagrams up to 5&times; with razor-sharp PDF vector lens rendering and live touch panning directly from your phone.</p>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon">⬛</div>
+                    <h4>Stage Covers & Watermarks</h4>
+                    <p>Need the audience's full attention? Instantly blank the projector with a clean Black screen, a bright White screen, or display your custom Brand Logo watermark.</p>
+                </div>
+
                 <div class="feat-card">
                     <div class="feat-icon">🌐</div>
                     <h4>The Edge Web Bridge</h4>
-                    <p>Hate switching tabs mid-presentation? Abiso natively intercepts Canva and Google Slides directly from Microsoft Edge—no manual downloading required.</p>
+                    <p>Hate switching tabs mid-presentation? Abiso natively intercepts <strong>Canva and Google Slides</strong> directly from Microsoft Edge. No manual downloading required.</p>
                 </div>
+
                 <div class="feat-card">
                     <div class="feat-icon">☕</div>
                     <h4>Master Timers & BGM</h4>
-                    <p>Audience getting restless during breaks? Project a beautiful countdown timer on the big screen, complete with built-in Lo-Fi background music and chime alarms.</p>
+                    <p>Audience getting restless during breaks? Project a beautiful countdown timer on the big screen, complete with built-in Lo-Fi or Corporate background music and chime alarms.</p>
                 </div>
+
                 <div class="feat-card">
                     <div class="feat-icon">🎲</div>
                     <h4>Random Audience Picker</h4>
-                    <p>Need to boost engagement? Run live Q&A sessions or raffles directly on the projector screen with an animated spinner and a 'Never Repeat' memory pool.</p>
+                    <p>Need to boost engagement? Run live Q&A sessions, icebreakers, or raffles directly on the projector screen with an animated spinner and a 'Never Repeat' memory pool.</p>
                 </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon">📊</div>
+                    <h4>Post-Show PDF Analytics</h4>
+                    <p>When you finish, Abiso automatically generates a beautiful PDF report detailing your slide pacing, total duration, and audience engagement metrics to help you improve.</p>
+                </div>
+
+                <div class="feat-card">
+                    <div class="feat-icon">🔊</div>
+                    <h4>System Media Remote</h4>
+                    <p>Control laptop master volume and mute. Trigger smart play/pause for local PowerPoint videos, YouTube, Vimeo, and Canva embeds without touching your keyboard.</p>
+                </div>
+
                 <div class="feat-card">
                     <div class="feat-icon">🛡️</div>
                     <h4>Stage-Rescue Failover</h4>
-                    <p>Corporate WiFi blocking your connection? Our 5-Second Mobile Hotspot failover ensures you never lose control on stage, even in strict network environments.</p>
+                    <p>Corporate WiFi blocking your connection? Our 5-Second Mobile Hotspot failover ensures you never lose control on stage, creating an unblockable direct link to your laptop.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO DEMO SECTION -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>See It In Action</h2>
+                <p style="color: var(--text-muted);">Watch the setup, features, and live presentation control.</p>
+            </div>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-label">▶ Part 1: Quick Setup</div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/N2gp8qbHuFg" title="Abiso Clicker Pro Demo Part 1" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-label">▶ Part 2: Pro Features</div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/1a6LwkAQZr4" title="Abiso Clicker Pro Demo Part 2" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-label">▶ Part 3: Live Control</div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/z2J7FLTe3Xc" title="Abiso Clicker Pro Demo Part 3" allowfullscreen loading="lazy"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -199,7 +318,7 @@
                 <h3 style="color: var(--accent);">Our Privacy Guarantee</h3>
                 <ul>
                     <li><strong>No invasive permissions:</strong> Because we use modern Android Scoped Storage and Local WiFi APIs, we <strong>never</strong> ask for your Contacts, Storage, or Location.</li>
-                    <li><strong>Privacy first:</strong> Your presentation files never leave your local WiFi network. No cloud processing.</li>
+                    <li><strong>Privacy first:</strong> Your presentation files never leave your local WiFi network. No cloud processing is involved in your slideshows.</li>
                     <li><strong>No hidden analytics:</strong> The PDF pacing reports you generate are saved locally on your device. We don't see them.</li>
                 </ul>
                 <a href="https://www.virustotal.com/" target="_blank" class="vt-link">🔍 Verify our File Hashes on VirusTotal before installing</a>
@@ -207,7 +326,7 @@
         </div>
     </section>
 
-    <section class="install">
+    <section id="install" class="install">
         <div class="container">
             <div class="section-header">
                 <h2>3-Minute Setup Guide</h2>
@@ -220,7 +339,7 @@
 
             <div id="tab-windows" class="tab-content active">
                 <ol>
-                    <li>Download and run the <strong>Abiso_Clicker_Pro_Host_Setup.exe</strong>.</li>
+                    <li>Download and run the <strong>Abiso_Clicker_Pro_Host_Setup_v3.exe</strong>.</li>
                     <li>Because this is a direct developer release, Windows SmartScreen will warn you. Click <strong>"More info"</strong> and then <strong>"Run anyway"</strong>.</li>
                     <li>Complete the installer. If Windows Firewall asks for permission, click <strong>Allow Access</strong> (this is required for your phone to connect).</li>
                     <li>Open PowerPoint and launch the Abiso Host from your Start Menu. Note the IP Address and PIN on the screen.</li>
@@ -247,7 +366,7 @@
         </div>
     </section>
 
-    <section class="faq">
+    <section id="faq" class="faq">
         <div class="container">
             <div class="section-header">
                 <h2>Frequently Asked Questions</h2>
@@ -257,8 +376,8 @@
                 <div class="faq-q" onclick="toggleFaq(this)">How much does it cost? Is it a subscription?</div>
                 <div class="faq-a">
                     No subscriptions. Pay once, own it forever.<br><br>
-                    A premium hardware clicker (like the Logitech Spotlight) costs upwards of ₱6,000+ ($100+), requires a USB dongle you might lose, and only gives you three basic buttons. Abiso gives you an entire stage command center.<br><br>
-                    Once officially launched on the App Stores, Abiso will move to standard retail pricing. However, if you download directly today, you lock in the <strong>Founder's Edition Lifetime License for a single payment of just ₱699 (Philippines) or $14.99 (International)</strong>. Payments are handled securely inside the app via PayMongo (GCash, Maya) or PayPal.
+                    A premium hardware clicker costs upwards of ₱6,000+ ($100+), requires a USB dongle you might lose, and only gives you three basic buttons. Abiso gives you an entire stage command center.<br><br>
+                    Once our store rollout completes, Abiso will move to standard retail pricing. However, if you download directly today, you lock in the <strong>Founder's Edition Lifetime License for a single payment of just ₱699 (Philippines) or $14.99 (International)</strong>. Payments are handled securely inside the app via PayMongo (GCash, Maya) or PayPal.
                 </div>
             </div>
 
@@ -268,21 +387,22 @@
                     This is very common on corporate and university networks (AP Isolation). To bypass this instantly:<br><br>
                     1. Turn on the "Mobile Hotspot" feature on your Windows laptop.<br>
                     2. Connect your Android phone's WiFi to your laptop's hotspot.<br>
-                    3. The IP address in the Abiso Host window will update automatically. Connect using that new IP. This creates an unblockable, ultra-low latency direct link between your phone and laptop!
+                    3. The IP address in the Abiso Host window will update automatically. Scan the new QR code.<br><br>
+                    This creates an unblockable, ultra-low latency direct link between your phone and laptop!
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-q" onclick="toggleFaq(this)">What happens to my Pro license if I lose my phone?</div>
                 <div class="faq-a">
-                    Your license is tied to your Google Account, not your physical device. If you upgrade your phone, simply download the APK, sign in with the same Google Account, and your Pro status is instantly restored.
+                    Your license is tied to your Google Account, not your physical device. If you upgrade your phone, simply download the app, sign in with the same Google Account, and your Pro status is instantly restored.
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-q" onclick="toggleFaq(this)">Does it work without internet during my presentation?</div>
                 <div class="faq-a">
-                    Yes. Once you have signed in at least once to verify your Pro license, it is securely cached on your phone. You do not need active internet to present using PowerPoint. The commands are sent over the local Local Area Network (WiFi/Hotspot). Note: You obviously still need internet on the laptop if you are presenting via Canva or Google Slides.
+                    Yes. Once you have signed in at least once to verify your Pro license, it is securely cached on your phone. You do not need active internet to present using PowerPoint. The commands are sent over your Local Area Network (WiFi/Hotspot). Note: You obviously still need internet on the laptop if you are presenting via Canva or Google Slides.
                 </div>
             </div>
         </div>
@@ -293,7 +413,7 @@
             <p><strong>ABISO CLICKER PRO</strong></p>
             <p style="margin-bottom: 16px;">Professional Tools for Professional Speakers</p>
             <p>Contact Support: <a href="mailto:abisosolutions@gmail.com">abisosolutions@gmail.com</a></p>
-            <p style="margin-top: 24px; font-size: 0.8rem;">© 2026 Abiso Solutions. All Rights Reserved.</p>
+            <p style="margin-top: 24px; font-size: 0.8rem;">&copy; 2026 Abiso Solutions. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -312,10 +432,8 @@
             const item = element.parentElement;
             const isActive = item.classList.contains('active');
             
-            // Close all
             document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
             
-            // Open clicked if it wasn't already active
             if (!isActive) {
                 item.classList.add('active');
             }
