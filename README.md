@@ -42,19 +42,22 @@ Get the official binaries below. To use Abiso Clicker Pro, you need the Windows 
 
 Abiso Clicker Pro isn't just a remote—it's a full production suite designed for professional trainers, educators, and executives. 
 
-- 📱 **Teleprompter Focus Mode:** Read your secret speaker notes right on your phone while the audience only sees the slides. Includes silent haptic pacing alerts.
-- 🔴 **144Hz Vector Laser & Avatars:** A buttery-smooth digital laser that renders perfectly on projectors and Smart TVs. Use Butterflies, Wands, Birds, or your Custom Brand Logo.
-- 🌐 **The Edge Web Bridge:** Natively intercept **Canva and Google Slides** directly from your browser. No manual downloading required.
-- ☕ **Master Timers & BGM:** Project a countdown timer on the big screen during breaks, complete with built-in Lo-Fi background music and chime alarms.
-- 🎲 **Random Audience Picker:** Run live Q&A sessions or raffles directly on the projector screen with a 'Never Repeat' memory pool.
-- 📊 **Post-Show Analytics:** Abiso generates a beautiful PDF report detailing your slide pacing, duration, and audience engagement after every session.
-- 🔊 **System Media Remote:** Control laptop volume, mute, and play/pause embedded videos from across the stage.
+- 📱 **Teleprompter & Live Preview:** See your current and next slides instantly. Read your secret speaker notes right on your phone while the audience only sees the presentation.
+- 🔴 **144Hz Vector Laser & Avatars:** Use a buttery-smooth digital laser (Butterflies, Wands, Birds, Dots, or Custom Logos) with sparkling trails that render perfectly on projectors.
+- 🔍 **High-DPI Vector Magnifier:** Zoom into fine-print diagrams up to 5&times; with razor-sharp PDF vector lens rendering and live touch panning directly from your phone.
+- 🌐 **The Edge Web Bridge:** Abiso natively intercepts **Canva and Google Slides** directly from Microsoft Edge. No manual downloading or uploading required.
+- ☕ **Master Timers & BGM:** Project a beautiful countdown timer on the big screen, complete with built-in Lo-Fi or Corporate background music and chime alarms.
+- 🎲 **Random Audience Picker:** Run live Q&A sessions, icebreakers, or raffles directly on the projector screen with an animated spinner and a 'Never Repeat' memory pool.
+- 📊 **Post-Show PDF Analytics:** Automatically generate a beautiful PDF report detailing your slide pacing, total duration, and audience engagement metrics to help you improve.
+- ⬛ **Stage Covers & Watermarks:** Instantly blank the projector with a clean Black screen, a bright White screen, or display your custom Brand Logo watermark.
+- 🔊 **System Media Remote:** Control laptop master volume and mute. Trigger smart play/pause for local PowerPoint videos, YouTube, Vimeo, and Canva embeds.
+- 🛡️ **Stage-Rescue Failover:** Corporate WiFi blocking your connection? Our 5-Second Mobile Hotspot failover ensures you never lose control on stage.
 
 ---
 
 ### 🛡️ Direct Release & Privacy Guarantee
 
-We are distributing directly to our early adopters while we finalize store certifications. We build on trust, and our code proves it:
+We are distributing directly to our early adopters while we prepare for our broader store launch. We build on trust, and our code proves it:
 
 1. **No Invasive Permissions:** Because we use modern Android Scoped Storage and Local WiFi APIs, we **never** ask for your Contacts, Storage, or Location.
 2. **100% Local Processing:** Your presentation files never leave your local WiFi network. No cloud processing is involved in your slideshows.
