@@ -1,67 +1,87 @@
 <div align="center">
-  <!-- If you have a logo, put the URL in src below. If not, the icon text looks great too -->
+  <img src="new_abiso_logo.png" width="120" alt="Abiso Clicker Pro Logo" />
   <br />
-  <h1> 🚀 Abiso Clicker Pro </h1>
-  <h3>Professional PowerPoint Control from your Android Device</h3>
+  <h1> 🚀 Abiso Clicker Pro V3.0 </h1>
+  <h3>Ditch the USB Dongle. Command the Stage.</h3>
   
   <p>
-    <b>Secure. Private. Zero-Lag.</b>
+    <b>Turn your Android phone into an elite presentation command center.<br>Seamlessly control PowerPoint, Canva, and Google Slides with zero-lag.</b>
   </p>
 
   <!-- Badges for a professional look -->
-  <img src="https://img.shields.io/github/v/release/abisosolutions/Abiso-Clicker-Pro-Distribution?style=for-the-badge&label=Latest%20Version&color=00E5CC" />
-  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Android-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/License-Lifetime%20Pro-gold?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Version-3.0.0%20Enterprise-00E5CC?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Android%20%7C%20Edge-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-Direct%20Release-7C4DFF?style=for-the-badge" />
 
   <br />
   <br />
 </div>
 
+> **🎉 V3.0 FOUNDER'S EDITION (EARLY ACCESS)**  
+> Legacy hardware clickers cost ₱6,000+ ($100+) and only have 3 buttons. While we prepare for our broader App Store rollout, we are offering early adopters the **Lifetime Pro License for just ₱699 / $14.99.**  
+> *⚠️ Strictly limited to the first 1,000 early adopters. Avoid future subscriptions by locking in your license today.*
+
+> **🎁 TEST ON STAGE. ZERO RISK.**  
+> Every account automatically gets **7 Full Presentation Sessions for FREE**. No ticking 7-day clocks. No credit card required. Use the 144Hz laser, read your notes, and test the Canva bridge on stage. 
+
 ---
 
 ### 📥 Quick Downloads
 
-Get the official binaries below. Both the Windows Host and Android App are required for the system to function.
+Get the official binaries below. To use Abiso Clicker Pro, you need the Windows Host and the Android App. (The Edge Extension is only required if you use Canva or Google Slides).
 
 | Component | Platform | Download Link |
 | :--- | :--- | :--- |
 | 💻 **Host Server** | Windows 10/11 | [**Download Installer (.exe)**](https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_Host_Setup.exe) |
-| 📱 **Controller App** | Android | [**Download App (.apk)**](https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_v1.apk) |
+| 📱 **Controller App** | Android 8.0+ | [**Download App (.apk)**](https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_v1.apk) |
+| 🌐 **Edge Bridge** | Microsoft Edge | [**Get Edge Add-on**](https://microsoftedge.microsoft.com/addons/detail/ajcghecbgeinlcilkclniljojjcfmofm) |
 
 ---
 
-### ✨ Why Abiso Clicker Pro?
+### ✨ The Stage Arsenal (V3.0 Features)
 
-Abiso Clicker Pro is designed for trainers, educators, and public speakers who need a high-reliability remote without the hassle of Bluetooth pairing or expensive hardware dongles.
+Abiso Clicker Pro isn't just a remote—it's a full production suite designed for professional trainers, educators, and executives. 
 
-- 📱 **Real-Time Previews:** View your current and next slides directly on your phone.
-- ✍️ **Speaker Notes:** Your private notes are streamed instantly—never lose your place again.
-- 🔴 **Precision Laser:** Hardware-accelerated laser pointer with multi-monitor support.
-- 🗂️ **Smart Caching:** Pre-download slides to your phone for 100% reliability on slow networks.
-- 🔒 **Privacy First:** Your presentation data never leaves your room. Everything stays on your local WiFi.
-- 🔊 **Media Control:** Change volume, mute, or play/pause videos from across the stage.
-
----
-
-### 🛠️ Setting Up (3-Minute Setup)
-
-1. **Install the Host:** Run the `Abiso_Clicker_Pro_Host_Setup.exe` on your laptop.
-2. **Launch PowerPoint:** Open the Host app and your PowerPoint presentation.
-3. **Connect Your Phone:** Install the `.apk` on your phone. Scan the **QR Code** on the host screen or enter the **IP:PIN** manually.
-4. **Present:** Tap "Connect" and take control of the stage!
+- 📱 **Teleprompter Focus Mode:** Read your secret speaker notes right on your phone while the audience only sees the slides. Includes silent haptic pacing alerts.
+- 🔴 **144Hz Vector Laser & Avatars:** A buttery-smooth digital laser that renders perfectly on projectors and Smart TVs. Use Butterflies, Wands, Birds, or your Custom Brand Logo.
+- 🌐 **The Edge Web Bridge:** Natively intercept **Canva and Google Slides** directly from your browser. No manual downloading required.
+- ☕ **Master Timers & BGM:** Project a countdown timer on the big screen during breaks, complete with built-in Lo-Fi background music and chime alarms.
+- 🎲 **Random Audience Picker:** Run live Q&A sessions or raffles directly on the projector screen with a 'Never Repeat' memory pool.
+- 📊 **Post-Show Analytics:** Abiso generates a beautiful PDF report detailing your slide pacing, duration, and audience engagement after every session.
+- 🔊 **System Media Remote:** Control laptop volume, mute, and play/pause embedded videos from across the stage.
 
 ---
 
-### 💡 Troubleshooting: Corporate WiFi?
-If your office or university WiFi blocks device-to-device connections:
+### 🛡️ Direct Release & Privacy Guarantee
+
+We are distributing directly to our early adopters while we finalize store certifications. We build on trust, and our code proves it:
+
+1. **No Invasive Permissions:** Because we use modern Android Scoped Storage and Local WiFi APIs, we **never** ask for your Contacts, Storage, or Location.
+2. **100% Local Processing:** Your presentation files never leave your local WiFi network. No cloud processing is involved in your slideshows.
+3. **Verify Before Installing:** We actively encourage you to upload our `.exe` and `.apk` files to **[VirusTotal](https://www.virustotal.com/)** to verify our clean file hashes before installing.
+
+---
+
+### 🛠️ 3-Minute Setup Guide
+
+1. **Install the Host:** Run the `Abiso_Clicker_Pro_Host_Setup.exe` on your Windows laptop. *(Click "More Info" -> "Run Anyway" on the Windows SmartScreen prompt).*
+2. **Install the App:** Download and install the `.apk` on your Android phone.
+3. **Connect Your Phone:** Ensure both devices are on the same WiFi. Open the Android app, tap the **QR Scanner**, and scan the code on your laptop screen.
+4. **(Optional) Canva & Google Slides:** Install the Abiso Bridge Extension in Microsoft Edge to present directly from the web.
+
+---
+
+### 💡 Stage-Rescue: Corporate WiFi Blocking You?
+Public/Corporate WiFi networks often block device-to-device connections (AP Isolation). To bypass this instantly:
 1. Turn on **Mobile Hotspot** on your Windows laptop.
-2. Connect your phone's WiFi to the laptop's hotspot.
-3. The connection will now work perfectly and securely!
+2. Connect your Android phone's WiFi to the laptop's hotspot.
+3. The IP address in the Abiso Host window will update automatically. Scan the new QR code. 
+*This creates an unblockable, ultra-low latency direct link between your phone and laptop!*
 
 ---
 
 <div align="center">
-  <p><b>Developed by Abiso Solutions</b></p>
+  <p><b>ABISO CLICKER PRO</b></p>
   <p><i>Professional Tools for Professional Speakers</i></p>
-  <a href="mailto:abisosolutions@gmail.com">Contact Support</a> • <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases">Releases</a>
+  <a href="mailto:abisosolutions@gmail.com">Contact Support</a> • <a href="https://abisosolutions.github.io/Abiso-Clicker-Pro-Distribution/">Official Website</a>
 </div>
