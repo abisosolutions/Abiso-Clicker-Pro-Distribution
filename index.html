@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +18,7 @@
             --gold: #FFD600;
             --purple: #7C4DFF;
             --red: #EF4444;
+            --ppt-orange: #F97316;
             --text-main: #F1F5F9;
             --text-muted: #94A3B8;
             --border: #374151;
@@ -55,17 +57,18 @@
         .promo-box p { font-size: 1rem; color: var(--text-muted); }
         .promo-box .limit { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--red); margin-top: 12px; font-weight: 700; }
 
-        /* DOWNLOAD GRID */
-        .download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; }
-        .dl-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px; text-align: left; transition: transform 0.2s, border-color 0.2s; }
+        /* DOWNLOAD GRID (4-COLUMN RESPONSIVE MATRIX) */
+        .download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
+        .dl-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px 24px; text-align: left; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, border-color 0.2s; }
         .dl-card:hover { transform: translateY(-4px); border-color: var(--accent); }
-        .dl-card h3 { font-size: 1.5rem; margin-bottom: 8px; }
-        .dl-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; min-height: 48px; }
-        .btn { display: block; text-align: center; padding: 14px 24px; border-radius: 12px; font-weight: 800; font-size: 1rem; transition: opacity 0.2s; cursor: pointer; }
+        .dl-card h3 { font-size: 1.35rem; margin-bottom: 8px; }
+        .dl-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px; flex-grow: 1; }
+        .btn { display: block; text-align: center; padding: 13px 20px; border-radius: 12px; font-weight: 800; font-size: 0.95rem; transition: opacity 0.2s; cursor: pointer; }
         .btn:hover { opacity: 0.9; }
         .btn-primary { background: var(--accent); color: var(--bg-color); }
         .btn-secondary { background: var(--purple); color: white; }
         .btn-edge { background: #38BDF8; color: var(--bg-color); }
+        .btn-ppt { background: var(--ppt-orange); color: white; }
 
         /* RISK REVERSAL */
         .risk-section { padding: 60px 0; text-align: center; background: var(--surface); border-bottom: 1px solid var(--surface-elevated); }
@@ -100,8 +103,8 @@
 
         /* INSTALL TABS */
         .install { padding: 80px 0; background: var(--surface); }
-        .tabs { display: flex; justify-content: center; gap: 16px; margin-bottom: 40px; flex-wrap: wrap; }
-        .tab-btn { background: var(--bg-color); border: 1px solid var(--border); color: var(--text-muted); padding: 12px 24px; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+        .tabs { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+        .tab-btn { background: var(--bg-color); border: 1px solid var(--border); color: var(--text-muted); padding: 12px 20px; border-radius: 8px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.2s; }
         .tab-btn.active { background: var(--accent-glow); color: var(--accent); border-color: var(--accent); }
         .tab-btn:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
         .tab-content { display: none; background: var(--bg-color); border: 1px solid var(--surface-elevated); border-radius: 16px; padding: 40px; }
@@ -126,6 +129,7 @@
             h1 { font-size: 2.5rem; }
             .nav-links { display: none; }
             .tabs { flex-direction: column; }
+            .download-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -165,21 +169,35 @@
                 <div class="limit">⚠️ Strictly limited to the first 1,000 early adopters.</div>
             </div>
 
+            <!-- 4-CARD ENTERPRISE DOWNLOAD MATRIX -->
             <div class="download-grid">
                 <div class="dl-card">
-                    <h3>💻 Windows Host</h3>
-                    <p>The local server for your Windows 10/11 laptop. No admin rights required for basic use.</p>
+                    <div>
+                        <h3>💻 Windows Host</h3>
+                        <p>The local presentation server for your Windows 10/11 laptop. Required for all presentations.</p>
+                    </div>
                     <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_Host_Setup_v3.exe" class="btn btn-primary">Download .exe</a>
                 </div>
                 <div class="dl-card">
-                    <h3>📱 Android App</h3>
-                    <p>The master controller. Sideload this APK onto any Android 8.0+ device.</p>
+                    <div>
+                        <h3>📱 Android App</h3>
+                        <p>The master controller. Sideload this APK onto any Android 8.0+ smartphone or tablet.</p>
+                    </div>
                     <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_v3.apk" class="btn btn-secondary">Download .apk</a>
                 </div>
                 <div class="dl-card">
-                    <h3>🌐 Edge Bridge</h3>
-                    <p>Required to intercept Canva and Google Slides directly from your browser.</p>
+                    <div>
+                        <h3>🌐 Edge Bridge</h3>
+                        <p>Required to present and auto-export Canva and Google Slides directly from Microsoft Edge.</p>
+                    </div>
                     <a href="https://microsoftedge.microsoft.com/addons/detail/ajcghecbgeinlcilkclniljojjcfmofm" target="_blank" class="btn btn-edge">Get Edge Add-on</a>
+                </div>
+                <div class="dl-card">
+                    <div>
+                        <h3>🔌 PPT Media Bridge</h3>
+                        <p>PowerPoint VSTO Add-in for seamless 0ms background video/audio playback control.</p>
+                    </div>
+                    <a href="https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso-PowerPoint-Bridge-Setup.exe" class="btn btn-ppt">Download Add-in (.exe)</a>
                 </div>
             </div>
         </div>
@@ -264,8 +282,8 @@
 
                 <div class="feat-card">
                     <div class="feat-icon">🔊</div>
-                    <h4>System Media Remote</h4>
-                    <p>Control laptop master volume and mute. Trigger smart play/pause for local PowerPoint videos, YouTube, Vimeo, and Canva embeds without touching your keyboard.</p>
+                    <h4>System Media Remote & PPT Bridge</h4>
+                    <p>Control laptop master volume and mute remotely. For PowerPoint decks containing embedded videos, our lightweight Media Bridge Add-in gives you instant 0ms background Play/Pause control without needing mouse clicks or taking focus away from your slides.</p>
                 </div>
 
                 <div class="feat-card">
@@ -335,6 +353,7 @@
                 <button class="tab-btn active" onclick="switchTab('windows')">1. Windows Host</button>
                 <button class="tab-btn" onclick="switchTab('android')">2. Android App</button>
                 <button class="tab-btn" onclick="switchTab('edge')">3. Edge Extension</button>
+                <button class="tab-btn" onclick="switchTab('ppt')">4. PPT Media Bridge</button>
             </div>
 
             <div id="tab-windows" class="tab-content active">
@@ -363,6 +382,15 @@
                     <li>Open your presentation in Edge. The extension will automatically route your slides to the projector and your speaker notes to your phone.</li>
                 </ol>
             </div>
+
+            <div id="tab-ppt" class="tab-content">
+                <ol>
+                    <li>If your PowerPoint presentations contain embedded video or audio files, download <strong>Abiso-PowerPoint-Bridge-Setup.exe</strong>.</li>
+                    <li>Run the installer. It automatically registers the VSTO Add-in with Microsoft PowerPoint (no complex configuration required).</li>
+                    <li>Open PowerPoint and verify the green status indicator in your Abiso Host dashboard.</li>
+                    <li>Now you can play and pause slide videos directly from your phone's Media Drawer, even when PowerPoint is running on an extended display or in the background!</li>
+                </ol>
+            </div>
         </div>
     </section>
 
@@ -378,6 +406,14 @@
                     No subscriptions. Pay once, own it forever.<br><br>
                     A premium hardware clicker costs upwards of ₱6,000+ ($100+), requires a USB dongle you might lose, and only gives you three basic buttons. Abiso gives you an entire stage command center.<br><br>
                     Once our store rollout completes, Abiso will move to standard retail pricing. However, if you download directly today, you lock in the <strong>Founder's Edition Lifetime License for a single payment of just ₱699 (Philippines) or $14.99 (International)</strong>. Payments are handled securely inside the app via PayMongo (GCash, Maya) or PayPal.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">Do I need to install the PowerPoint Media Bridge?</div>
+                <div class="faq-a">
+                    The PowerPoint Media Bridge is optional, but <strong>strongly recommended if your presentations contain embedded video or audio clips</strong>.<br><br>
+                    Windows PowerPoint normally freezes or ignores play/pause keyboard shortcuts whenever another window, presenter screen, or overlay has focus. The Media Bridge VSTO Add-in creates a dedicated high-speed local pipe between PowerPoint and the Abiso Host, enabling true 0ms background Play/Pause control without needing to touch your mouse or steal window focus.
                 </div>
             </div>
 
@@ -423,8 +459,11 @@
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             
-            event.target.classList.add('active');
-            document.getElementById('tab-' + tabId).classList.add('active');
+            const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+            if (targetBtn) targetBtn.classList.add('active');
+            
+            const targetContent = document.getElementById('tab-' + tabId);
+            if (targetContent) targetContent.classList.add('active');
         }
 
         // FAQ Accordion Logic
