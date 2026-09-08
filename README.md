@@ -10,7 +10,7 @@
 
   <!-- Badges for a professional look -->
   <img src="https://img.shields.io/badge/Version-3.0.0%20Enterprise-00E5CC?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Android%20%7C%20Edge-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Android%20%7C%20Edge%20%7C%20PowerPoint-blue?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Status-Direct%20Release-7C4DFF?style=for-the-badge" />
 
   <br />
@@ -26,15 +26,16 @@
 
 ---
 
-### 📥 Quick Downloads
+### 📥 Quick Downloads (4-Component Suite)
 
-Get the official binaries below. To use Abiso Clicker Pro, you need the Windows Host and the Android App. (The Edge Extension is only required if you use Canva or Google Slides).
+Get the official binaries below. To run Abiso Clicker Pro, you need the Windows Host and the Android App. For web decks, add the Edge Extension. For PowerPoint video playback, add the Media Bridge.
 
-| Component | Platform | Download Link |
-| :--- | :--- | :--- |
-| 💻 **Host Server** | Windows 10/11 | [**Download Installer (.exe)**](https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_Host_Setup_v3.exe) |
-| 📱 **Controller App** | Android 8.0+ | [**Download App (.apk)**](https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_v3.apk) |
-| 🌐 **Edge Bridge** | Microsoft Edge | [**Get Edge Add-on**](https://microsoftedge.microsoft.com/addons/detail/ajcghecbgeinlcilkclniljojjcfmofm) |
+| Component | Platform | Role | Download Link |
+| :--- | :--- | :--- | :--- |
+| 💻 **Host Server** | Windows 10/11 | Core presentation server | [**Download Installer (.exe)**](https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_Host_Setup_v3.exe) |
+| 📱 **Controller App** | Android 8.0+ | Master stage remote | [**Download App (.apk)**](https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso_Clicker_Pro_v3.apk) |
+| 🌐 **Edge Bridge** | Microsoft Edge | Canva & Google Slides integration | [**Get Edge Add-on**](https://microsoftedge.microsoft.com/addons/detail/ajcghecbgeinlcilkclniljojjcfmofm) |
+| 🔌 **PPT Media Bridge** | Microsoft PowerPoint | Background video/audio control | [**Download Add-in (.exe)**](https://github.com/abisosolutions/Abiso-Clicker-Pro-Distribution/releases/latest/download/Abiso-PowerPoint-Bridge-Setup.exe) |
 
 ---
 
@@ -47,7 +48,7 @@ Get the official binaries below. To use Abiso Clicker Pro, you need the Windows 
 
 ### ✨ The Stage Arsenal (V3.0 Features)
 
-Abiso Clicker Pro isn't just a remote—it's a full production suite designed for professional trainers, educators, and executives. 
+Abiso Clicker Pro isn't just a remote—it's a full production suite designed for professional trainers, educators, and executives:
 
 1. ⚡ **0ms Slide Navigation:** Instant hardware-level key injection for next/previous slides, plus instant jumping via the thumbnail grid.
 2. 📱 **Teleprompter & Live Preview:** Read your secret speaker notes right on your phone while the audience only sees the slides. Includes silent haptic pacing alerts.
@@ -59,7 +60,7 @@ Abiso Clicker Pro isn't just a remote—it's a full production suite designed fo
 8. ☕ **Master Timers & BGM:** Project a beautiful countdown timer on the big screen during breaks, complete with built-in Lo-Fi background music and alarm chimes.
 9. 🎲 **Random Audience Picker:** Run live Q&A sessions or raffles directly on the projector screen with an animated spinner and a 'Never Repeat' memory pool.
 10. 📊 **Post-Show PDF Analytics:** Automatically generates a beautiful PDF report detailing your slide pacing, total duration, and audience engagement metrics.
-11. 🔊 **System Media Remote:** Control laptop volume, mute, and trigger smart play/pause for local PowerPoint videos, YouTube, Vimeo, and Canva embeds.
+11. 🔊 **System Media Remote & PPT Bridge:** Control laptop volume and mute remotely. For PowerPoint decks containing embedded videos, the lightweight Media Bridge Add-in gives you 0ms background Play/Pause control without needing mouse clicks or taking focus away from your slides.
 12. 🛡️ **Stage-Rescue Failover:** Corporate WiFi blocking your connection? Our 5-Second Mobile Hotspot failover ensures you never lose control on stage.
 
 ---
@@ -77,9 +78,10 @@ We are distributing directly to our early adopters while we prepare for our broa
 ### 🛠️ 3-Minute Setup Guide
 
 1. **Install the Host:** Run the `Abiso_Clicker_Pro_Host_Setup_v3.exe` on your Windows laptop. *(Click "More Info" -> "Run Anyway" on the Windows SmartScreen prompt).*
-2. **Install the App:** Download and install the `.apk` on your Android phone.
+2. **Install the App:** Download and install the `Abiso_Clicker_Pro_v3.apk` on your Android phone.
 3. **Connect Your Phone:** Ensure both devices are on the same WiFi. Open the Android app, tap the **QR Scanner**, and scan the code on your laptop screen.
-4. **(Optional) Canva & Google Slides:** Install the Abiso Bridge Extension in Microsoft Edge to present directly from the web.
+4. **(Optional) Canva & Google Slides:** Install the Abiso Bridge Extension in Microsoft Edge to present directly from your browser.
+5. **(Optional) PowerPoint Embedded Videos:** If your presentation contains embedded media, run `Abiso-PowerPoint-Bridge-Setup.exe` to register the background VSTO Add-in for seamless 0ms Play/Pause control.
 
 ---
 
